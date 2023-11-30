@@ -63,21 +63,51 @@ if(isset($_POST['insert_product'])){
             <!-- title -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_title" class="form-label">Product Title</label>
-                <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter Product Title"
+                <input type="text" name="product_title" id="product_title" class="form-control" placeholder="Enter Product Title" autocomplete="off"
                 required="required">
             </div>
 
             <!-- description -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="description" class="form-label">Product description</label>
-                <input type="text" name="description" id="description" class="form-control" placeholder="Enter description"
+                <input type="text" name="description" id="description" class="form-control" placeholder="Enter description" autocomplete="off"
                 required="required">
             </div>   
                 <!-- keywords -->
                 <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_keywords" class="form-label">Product keywords</label>
-                <input type="text" name="product_keywords" id="product_keywords" class="form-control" placeholder="Enter Product keywords"
+                <input type="text" name="product_keywords" id="product_keywords" class="form-control" placeholder="Enter Product keywords" autocomplete="off"
                 required="required">
+            </div>
+            <!-- categories -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <select name="product_categories" id="" class="form-select">
+                    <option value="">Select a Category</option>
+<?php
+$select_query="Select * from `categories`";
+$result_query=mysqli_query($con,$select_query);
+while($row=mysqli_fetch_assoc($result_query)){
+    $category_title=$row['category_title'];
+    $category_id=$row['category_id'];
+    echo "<option value='$category_id'>$category_title</option>";
+}
+?>
+                </select>
+            </div>
+            <!-- brands -->
+            <div class="form-outline mb-4 w-50 m-auto">
+                <select name="product_brands" id="" class="form-select">
+                    <option value="">Select a Brands</option>
+                    <?php
+$select_query="Select * from `brands`";
+$result_query=mysqli_query($con,$select_query);
+while($row=mysqli_fetch_assoc($result_query)){
+    $brand_title=$row['brand_title'];
+    $brand_id=$row['brand_id'];
+    echo "<option value='$brand_id'>$brand_title</option>";
+}
+?>
+                </select>
             </div>
             <!-- image 1 -->
             <div class="form-outline mb-4 w-50 m-auto">
@@ -100,7 +130,7 @@ if(isset($_POST['insert_product'])){
             <!-- Price -->
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_Price" class="form-label">Product Price</label>
-                <input type="text" name="product_Price" id="product_Price" class="form-control" placeholder="Enter Product Price"
+                <input type="text" name="product_Price" id="product_Price" class="form-control" placeholder="Enter Product Price" autocomplete="off"
                 required="required">
             </div>
             <!-- submit -->
