@@ -18,6 +18,10 @@
     width: 100px;
     object-fit: contain;    
 }
+.footer{
+    position: absolute;
+    bottom: 0;
+}
     </style>
 </head>
 <body>
@@ -50,23 +54,31 @@
                     alt="" class="admin_image"></a>
                     <p class="text-light text-center">Admin Name</p>
                 </div>
-                <!-- button*10>a.nav-link.text-light.bg-info.my-1 -->
+                <!-- button*4>a.nav-link.text-light.bg-info.my-1 -->
                 <div class="button text-center">
                     <button class="my-3"><a href="insert_product.php" class="nav-link text-light 
                     bg-info my-1">Insert Products</a></button>
-                    <button><a href="" class="nav-link text-light 
-                    bg-info my-1">View Products</a></button>
-                    <button><a href="" class="nav-link text-light 
-                    bg-info my-1">All Orders</a></button>
-                    <button><a href="" class="nav-link text-light 
-                    bg-info my-1">All payment</a></button>
-                    <button><a href="" class="nav-link text-light 
-                    bg-info my-1">List Orders</a></button>  
+                    <button><a href="index.php?insert_category" class="nav-link text-light 
+                    bg-info my-1">Insert Categories</a></button>
+                    <button><a href="index.php?insert_brand" class="nav-link text-light 
+                    bg-info my-1">Insert Brands</a></button> 
                     <button><a href="" class="nav-link text-light 
                     bg-info my-1">Logout</a></button>                 
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- fourth child -->
+    <div class="container my-3">
+        <?php
+        if(isset($_GET['insert_category'])){
+            include('insert_categories.php');
+        }
+        if(isset($_GET['insert_brand'])){
+            include('insert_brands.php');
+        }
+        ?>
     </div>
 
 <!-- last child -->
