@@ -11,7 +11,7 @@
     crossorigin="anonymous">
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />     
-     <!--cc file  -->
+     <!--css file  -->
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -72,186 +72,107 @@
 
 <!-- fourth child -->
 <div class="row">
-    <div class="col-md-10"></div>
-    <!-- Products -->
+  <div class="col-md-10">
+    <!-- products -->
     <div class="row">
-        <div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P1.png" class="card-img-top" alt="...">
+      <div class="col-md-4 mb-2">
+      <div class="card">
+  <img src="./images/p1.png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Polo T-Shirt</h5>
-    <p class="card-text">Adidas Polo T Shirt Damen Rot</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Add To Cart</a>
     <a href="#" class="btn btn-secondary">View More</a>
   </div>
 </div>
-</div>
-        <div class="col-md-3 mb-4">
-        <div class="card">
+      </div>
+      <div class="col-md-4 mb-2">
+      <div class="card">
   <img src="./images/p2.png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Leather Jacket</h5>
-    <p class="card-text">Fur Lined Leather Jacket</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Add To Cart</a>
     <a href="#" class="btn btn-secondary">View More</a>
   </div>
 </div>
-        </div>
-        <div class="col-md-3 mb-4">
-        <div class="card">
+      </div>
+      <div class="col-md-4 mb-2">
+      <div class="card">
   <img src="./images/p3.png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">T-Shirt</h5>
-    <p class="card-text">Black T-shirt</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Add To Cart</a>
     <a href="#" class="btn btn-secondary">View More</a>
+  </div>
 </div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P4.png" class="card-img-top" alt="...">
+      </div>
+      <div class="col-md-4 mb-2">
+      <div class="card">
+  <img src="./images/p4.png" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Short Pants</h5>
-    <p class="card-text">Short Pants Gray</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Add To Cart</a>
     <a href="#" class="btn btn-secondary">View More</a>
+  </div>
 </div>
-</div>
-</div>
-    <div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P5.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Long Pants</h5>
-    <p class="card-text">Khaki Pant</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P6.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Long Sleeve</h5>
-    <p class="card-text">Women S Long Sleeve</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P7.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Hoodie</h5>
-    <p class="card-text">Hoodie</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P8.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Sleeveless Shirt</h5>
-    <p class="card-text">Color Gray Sleeveless Shirt</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P9.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Prom Dress</h5>
-    <p class="card-text">Phantom Of The Opera Prom Dress</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P10.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Jean Shorts</h5>
-    <p class="card-text">Girls Jean Shorts</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P11.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Fashion Bag</h5>
-    <p class="card-text">Women Fashion Bags</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P12.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Back Pack</h5>
-    <p class="card-text">Back Pack</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P13.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Baseball Jersey</h5>
-    <p class="card-text">Champion Braided Baseball Jersey</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P14.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Blazer</h5>
-    <p class="card-text">Blazer For Men</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P15.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Shirt</h5>
-    <p class="card-text">Dress Shirt</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
-<div class="col-md-3 mb-4">
-        <div class="card">
-  <img src="./images/P16.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Short Sleeve</h5>
-    <p class="card-text">Men Short Sleeve Poplin Dress Shirt</p>
-    <a href="#" class="btn btn-info">Add To Cart</a>
-    <a href="#" class="btn btn-secondary">View More</a>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 bg-secondary p-0">
+    <!-- brands to be displayed -->
+    <ul class="navbar-nav me-auto text-center">
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">brand1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">brand2</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">brand3</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">brand4</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">brand5</a>
+      </li>
+    </ul>
 
+    <!-- categories to be displayed -->
+    <ul class="navbar-nav me-auto text-center">
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories2</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories3</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories4</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-light">Categories5</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <!-- last child -->
 <div class="bg-info p10 text-center">
