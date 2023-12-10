@@ -5,6 +5,8 @@ if(isset($_POST['insert_product'])){
     $product_title=$_POST['product_title'];
     $description=$_POST['description'];
     $product_keywords=$_POST['product_keywords'];
+    $product_category=$_POST['product_category'];
+    $product_brands=$_POST['product_brands'];
     $product_Price=$_POST['product_Price'];
     $product_status='true';
 
@@ -19,7 +21,7 @@ if(isset($_POST['insert_product'])){
     $temp_image3=$_FILES['product_image3']['tmp_name'];
 
     // checking empty condition
-    if($product_title=='' or $description=='' or $product_keywords=='' or $product_Price=='' or 
+    if($product_title=='' or $description=='' or $product_keywords=='' or $product_category=='' or $product_brands=='' or $product_Price=='' or 
     $product_image1=='' or $product_image2=='' or $product_image3=='' ){
         echo"<script>alert('please fill all the available fields')</script>";
         exit();
@@ -29,9 +31,9 @@ if(isset($_POST['insert_product'])){
         move_uploaded_file($temp_image3, "./product_images/$product_image3");
 
         // insert query
-        $insert_products="insert into `products` (product_title,product_description,product_keywords,
+        $insert_products="insert into `products` (product_title,product_description,product_keywords,category_id,brand_id,
         product_image1,product_image2,product_image3,product_price,date,status) values ('$product_title','$description',
-        '$product_keywords','$product_image1','$product_image2','$product_image3','$product_Price',NOW(),'$product_status')";
+        '$product_keywords','$product_category','$product_brands','$product_image1','$product_image2','$product_image3','$product_Price',NOW(),'$product_status')";
         $result_query=mysqli_query($con,$insert_products);
         if($result_query){
             echo"<script>alert('Successfully Inserted the Products')</script>";
@@ -81,7 +83,7 @@ if(isset($_POST['insert_product'])){
             </div>
             <!-- categories -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <select name="product_categories" id="" class="form-select">
+                <select name="product_category" id="" class="form-select">
                     <option value="">Select a Category</option>
 <?php
 $select_query="Select * from `categories`";
@@ -98,7 +100,7 @@ while($row=mysqli_fetch_assoc($result_query)){
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_brands" id="" class="form-select">
                     <option value="">Select a Brands</option>
-                    <?php
+<?php
 $select_query="Select * from `brands`";
 $result_query=mysqli_query($con,$select_query);
 while($row=mysqli_fetch_assoc($result_query)){
