@@ -1,46 +1,66 @@
 <?php
 include('../includes/connect.php');
-if(isset($_POST['insert_product'])){
 
-    $product_title=$_POST['product_title'];
-    $description=$_POST['description'];
-    $product_keywords=$_POST['product_keywords'];
-    $product_category=$_POST['product_category'];
-    $product_brands=$_POST['product_brands'];
-    $product_Price=$_POST['product_Price'];
-    $product_status='true';
+if (isset($_POST['insert_product'])) {
+    // Sanitize inputs
+    $product_title = mysqli_real_escape_string($con, $_POST['product_title']);
+    $description = mysqli_real_escape_string($con, $_POST['description']);
+    $product_keywords = mysqli_real_escape_string($con, $_POST['product_keywords']);
+    $product_category = mysqli_real_escape_string($con, $_POST['product_category']);
+    $product_brands = mysqli_real_escape_string($con, $_POST['product_brands']);
+    $product_Price = mysqli_real_escape_string($con, $_POST['product_Price']);
+    $product_status = 'true';
 
-    // accessing images
-    $product_image1=$_FILES['product_image1']['name'];
-    $product_image2=$_FILES['product_image2']['name'];
-    $product_image3=$_FILES['product_image3']['name'];
-
-    // accessing image tmp name
-    $temp_image1=$_FILES['product_image1']['tmp_name'];
-    $temp_image2=$_FILES['product_image2']['tmp_name'];
-    $temp_image3=$_FILES['product_image3']['tmp_name'];
-
-    // checking empty condition
-    if($product_title=='' or $description=='' or $product_keywords=='' or $product_category=='' or $product_brands=='' or $product_Price=='' or 
-    $product_image1=='' or $product_image2=='' or $product_image3=='' ){
-        echo"<script>alert('please fill all the available fields')</script>";
+    // Validate inputs
+    if (empty($product_title) || empty($description) || empty($product_keywords) || empty($product_category) || empty($product_brands) || empty($product_Price)) {
+        echo "<script>alert('Please fill all the available fields')</script>";
         exit();
-    }else{
-        move_uploaded_file($temp_image1, "./product_images/$product_image1");
-        move_uploaded_file($temp_image2, "./product_images/$product_image2");
-        move_uploaded_file($temp_image3, "./product_images/$product_image3");
+    }
 
-        // insert query
-        $insert_products="insert into `products` (product_title,product_description,product_keywords,category_id,brand_id,
-        product_image1,product_image2,product_image3,product_price,date,status) values ('$product_title','$description',
-        '$product_keywords','$product_category','$product_brands','$product_image1','$product_image2','$product_image3','$product_Price',NOW(),'$product_status')";
-        $result_query=mysqli_query($con,$insert_products);
-        if($result_query){
-            echo"<script>alert('Successfully Inserted the Products')</script>";
-        }
+    // File upload handling
+    $upload_dir = "./product_images/";
+    $product_image1 = uploadFile('product_image1', $upload_dir);
+    $product_image2 = uploadFile('product_image2', $upload_dir);
+    $product_image3 = uploadFile('product_image3', $upload_dir);
+
+    // Insert query
+    $insert_products = "INSERT INTO `products` (product_title, product_description, product_keywords, category_id, brand_id,
+        product_image1, product_image2, product_image3, product_price, date, status) 
+        VALUES ('$product_title', '$description', '$product_keywords', '$product_category', '$product_brands',
+        '$product_image1', '$product_image2', '$product_image3', '$product_Price', NOW(), '$product_status')";
+
+    $result_query = mysqli_query($con, $insert_products);
+
+    if ($result_query) {
+        echo "<script>alert('Successfully Inserted the Products')</script>";
+    } else {
+        echo "<script>alert('Error inserting product')</script>";
+    }
+}
+
+function uploadFile($inputName, $uploadDir)
+{
+    $file = $_FILES[$inputName]['name'];
+    $temp_file = $_FILES[$inputName]['tmp_name'];
+
+    if (empty($file)) {
+        echo "<script>alert('Please select an image for $inputName')</script>";
+        exit();
+    }
+
+    $target_file = $uploadDir . basename($file);
+
+    // Check file type or other validations here
+
+    if (move_uploaded_file($temp_file, $target_file)) {
+        return $file;
+    } else {
+        echo "<script>alert('Error uploading $inputName')</script>";
+        exit();
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +120,7 @@ while($row=mysqli_fetch_assoc($result_query)){
             <div class="form-outline mb-4 w-50 m-auto">
                 <select name="product_brands" id="" class="form-select">
                     <option value="">Select a Brands</option>
-<?php
+                    <?php
 $select_query="Select * from `brands`";
 $result_query=mysqli_query($con,$select_query);
 while($row=mysqli_fetch_assoc($result_query)){
